@@ -1,0 +1,1 @@
+Psycopg2 is an opensource PostgreSQL driver library in Python. It is widely used and actively developed. The current release of Psycopg2 support both Python3 and PostgreSQL9.4. This tutorial will show how to play with PostgreSQL using Psycopg2.

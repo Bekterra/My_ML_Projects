@@ -1,0 +1,101 @@
+# Welcome to Serverless!
+#
+# This file is the main config file for your service.
+# It's very minimal at this point and uses default values.
+# You can always add more config options for more control.
+# We've included some commented out config examples here.
+# Just uncomment any of them to get that config option.
+#
+# For full config options, check the docs:
+#    docs.serverless.com
+#
+# Happy Coding!
+
+service: MyJobBot # NOTE: update this with your service name
+
+# You can pin your service to only deploy with a specific Serverless version
+# Check out our docs for more details
+# frameworkVersion: "=X.X.X"
+
+provider:
+  name: aws
+  runtime: python3.6
+  stage: dev
+  region: us-west-1
+  environment:
+    TELEGRAM_TOKEN: ${env:TELEGRAM_TOKEN}
+
+
+
+
+functions:
+  facts_to_str:
+    description: Converts factors to string
+    handler: handler.facts_to_str
+
+  start:
+    description: Respond to user
+    handler: handler.start
+
+  position:
+    description: Choose postion 
+    handler: handler.position
+
+  skip_position:
+    description: Skips postion function
+    handler: handler.skip_position
+
+  city:
+    description: Choose city
+    handler: handler.city
+
+  skip_city:
+    description: Skip city function
+    handler: handler.skip_city
+
+  state:
+    description: Choose state
+    handler: handler.state
+
+  skip_state:
+    description: Skip state function
+    handler: handler.skip_state
+
+  website:
+    description: Choose website that you want to scrape
+    handler: handler.website
+
+  skip_website:
+    description: Skip website function
+    handler: handler.skip_website
+
+  transform:
+    description: Transforms input variables 
+    handler: handler.transform
+
+  parse:
+    description: Parses URL and returns pd.dataframe 
+    handler: handler.parse
+
+  url_builder:
+    description: Returns first job posting
+    handler: handler.url_builder
+
+  next_job:
+    description: Returns next job posting
+    handler: handler.next_job
+
+  cancel:
+    description: Cancels user conversation
+    handler: handler.cancel
+
+  main:
+    description: Main body function
+    handler: handler.main
+
+  error:
+    description: Error notifier to logger
+    handler: handler.error
+
+
+
